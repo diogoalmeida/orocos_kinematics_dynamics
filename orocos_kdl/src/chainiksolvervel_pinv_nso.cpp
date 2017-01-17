@@ -69,10 +69,11 @@ namespace KDL
 
     int ChainIkSolverVel_pinv_nso::CartToJnt(const JntArray& q_in, const Twist& v_in, JntArray& qdot_out)
     {
+        std::cout << "OROCOS CUSTOM" << std::endl;
         if (nj != q_in.rows() || nj != qdot_out.rows() || nj != opt_pos.rows() || nj != weights.rows())
             return (error = E_SIZE_MISMATCH);
         //Let the ChainJntToJacSolver calculate the jacobian "jac" for
-        //the current joint positions "q_in" 
+        //the current joint positions "q_in"
         error = jnt2jac.JntToJac(q_in,jac);
         if (error < E_NOERROR) return error;
 

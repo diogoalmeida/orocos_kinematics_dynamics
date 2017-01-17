@@ -25,6 +25,7 @@
 #include "chainiksolver.hpp"
 #include "chainjnttojacsolver.hpp"
 #include <Eigen/Core>
+#include <iostream>
 
 namespace KDL
 {
@@ -36,9 +37,9 @@ namespace KDL
      * rotations.
      *
      * In case of a redundant robot this solver optimizes the the following criterium:
-     * g=0.5*sum(weight*(Desired_joint_positions - actual_joint_positions))^2 as described in 
-     *  A. Liegeois. Automatic supervisory control of the configuration and 
-     * behavior of multibody mechnisms. IEEE Transactions on Systems, Man, and 
+     * g=0.5*sum(weight*(Desired_joint_positions - actual_joint_positions))^2 as described in
+     *  A. Liegeois. Automatic supervisory control of the configuration and
+     * behavior of multibody mechnisms. IEEE Transactions on Systems, Man, and
      * Cybernetics, 7(12):868–871, 1977
      *
      * @ingroup KinematicFamily
@@ -121,4 +122,3 @@ namespace KDL
     };
 }
 #endif
-
